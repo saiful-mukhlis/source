@@ -207,10 +207,10 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		initMenu(exit, L.exit, KeyEvent.VK_E, KeyEvent.VK_X,
 				ActionEvent.CTRL_MASK, EXIT);
 		initMenu(editMenu, L.edit);
-		initMenu(add, L.add, ADD);
-		initMenu(edit, L.edit, EDIT);
-		initMenu(del, L.del, DEL);
-		initMenu(view, L.view, VIEW);
+		initMenu(add, L.add, KeyEvent.VK_T, KeyEvent.VK_N, ActionEvent.CTRL_MASK, ADD);
+		initMenu(edit, L.edit, KeyEvent.VK_E, KeyEvent.VK_E, ActionEvent.CTRL_MASK, EDIT);
+		initMenu(del, L.del, KeyEvent.VK_H, KeyEvent.VK_DELETE, 0, DEL);
+		initMenu(view, L.view, KeyEvent.VK_L, KeyEvent.VK_W, ActionEvent.CTRL_MASK, VIEW);
 		
 		initMenu(master, LWindow.master);
 		initMenu(pegawai, LWindow.pegawai, PEGAWAI);
@@ -289,6 +289,7 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		del.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				App.showErrSementara("asdfasdf");
 				window.actionDel();
 			}
 		});
