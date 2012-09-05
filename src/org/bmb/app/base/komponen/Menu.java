@@ -54,7 +54,7 @@ public class Menu implements MenuAdapter, HakAksesListener {
 	protected JMenuItem exit;
 	
 	public static Icon LOGIN=App.getIcon(L.iconLogin16);
-//	public static Icon CLOSE=App.getIcon(L.icon);
+	public static Icon CLOSE=App.getIcon(L.iconClose16);
 	public static Icon PRINT=App.getIcon(L.iconPrint16);
 	public static Icon EXIT=App.getIcon(L.iconExit16);
 
@@ -200,10 +200,10 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		menu.add(setting);
 		menu.add(help);
 
-		initMenu(file, "File");
-		initMenu(login, L.login, LOGIN);
-		initMenu(close, L.close, KeyEvent.VK_C, KeyEvent.VK_W, ActionEvent.CTRL_MASK);
-		initMenu(print, L.print, PRINT);
+		initMenu(file, L.file);
+		initMenu(login, L.login, KeyEvent.VK_L, KeyEvent.VK_L, ActionEvent.CTRL_MASK, LOGIN);
+		initMenu(close, L.close, KeyEvent.VK_C, KeyEvent.VK_W, ActionEvent.CTRL_MASK, CLOSE );
+		initMenu(print, L.print, KeyEvent.VK_P, KeyEvent.VK_P, ActionEvent.CTRL_MASK, PRINT);
 		initMenu(exit, L.exit, KeyEvent.VK_E, KeyEvent.VK_X,
 				ActionEvent.CTRL_MASK, EXIT);
 		initMenu(editMenu, L.edit);

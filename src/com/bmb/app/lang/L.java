@@ -10,6 +10,7 @@ public class L {
 	private L() {
 	}
 
+	public static String file="File";
 	public static String save="Save";
 	public static String reset="Reset";
 	public static String cancel="Cancel";
@@ -66,6 +67,8 @@ public class L {
 	
 	public static String iconView16="/image/view-16.png";
 	public static String iconAbout16="/image/about-16.png";
+	
+	public static String iconClose16="/image/delete-16.png";
 
 	
 	
