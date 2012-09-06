@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -18,6 +20,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.jdesktop.swingx.JXTable;
 
@@ -60,6 +63,8 @@ public class MasterAbstract4 implements MasterActionAdapter, HakAksesListener, M
 	protected JPanel aksi;
 
 	protected JToolBar toolBar;
+	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
 	
 	public void initComponent(){
 		urlIcon="icon pegawai 16";
@@ -476,6 +481,12 @@ public class MasterAbstract4 implements MasterActionAdapter, HakAksesListener, M
 	public boolean getPrint() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 	
 

@@ -42,7 +42,7 @@ import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
-public class Window extends WindowAbstract implements ToolbarSmallAdapter{
+public class Window extends WindowAbstract{
 	
 	private List<Komponent> komponents=new ArrayList<Komponent>();
 	private List<HakAksesListener> cangeHakAkses = new ArrayList<HakAksesListener>();
@@ -470,25 +470,6 @@ public class Window extends WindowAbstract implements ToolbarSmallAdapter{
 	}
 
 
-	@Override
-	public void changeState() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void setFalseAll() {
-		// TODO Auto-generated method stub
-		menu.setFalseAll();
-	}
-
-
-	@Override
-	public void setStateByHakAkses() {
-		// TODO Auto-generated method stub
-		menu.setStateByHakAkses();
-	}
 	
 
 }

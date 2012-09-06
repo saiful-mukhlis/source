@@ -6,6 +6,8 @@ import java.awt.Component;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +22,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.jdesktop.swingx.JXTable;
 
@@ -60,6 +63,8 @@ public class LajurdMaster implements MasterActionAdapter, HakAksesListener, Mast
 	protected JPanel aksi;
 
 	protected JToolBar toolBar;
+	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
 	
 	public void init(ODatabaseDocumentTx db){
 		urlIcon=L.iconLajur16;
@@ -517,6 +522,14 @@ public class LajurdMaster implements MasterActionAdapter, HakAksesListener, Mast
 	public boolean getEdit() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 	
 	

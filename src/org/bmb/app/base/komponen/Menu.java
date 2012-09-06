@@ -299,7 +299,6 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		del.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				App.showErrSementara("asdfasdf");
 				window.actionDel();
 			}
 		});
@@ -423,6 +422,7 @@ public class Menu implements MenuAdapter, HakAksesListener {
 
 	@Override
 	public void setFalseAll() {
+		App.showErrSementara("Asdf");
 		add.setEnabled(false);
 		edit.setEnabled(false);
 		view.setEnabled(false);
@@ -433,6 +433,7 @@ public class Menu implements MenuAdapter, HakAksesListener {
 	@Override
 	public void setStateByHakAkses() {
 		// TODO Auto-generated method stub
+		App.showErrSementara("Asdf");
 		if (window.getKomponentSeledcted()!=null) {
 			MasterActionAdapter master=window.getKomponentSeledcted().getWidgetTop();
 			add.setEnabled(master.getAdd());

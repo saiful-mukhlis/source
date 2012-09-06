@@ -197,5 +197,11 @@ public abstract class WindowAbstract implements WindowAdapter{
 	public void setIdSelected(String idSelected) {
 		this.idSelected = idSelected;
 	}
+	public MenuAdapter getMenu() {
+		return menu;
+	}
+	public void setMenu(MenuAdapter menu) {
+		this.menu = menu;
+	}
 	
 }

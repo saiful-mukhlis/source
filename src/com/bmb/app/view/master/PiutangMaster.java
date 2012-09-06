@@ -2,6 +2,8 @@ package com.bmb.app.view.master;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,6 +14,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.bmb.app.base.komponen.SplitPane;
 import org.bmb.app.base.komponen.ToolbarSmallR;
@@ -49,6 +52,8 @@ public class PiutangMaster implements MasterActionAdapter, HakAksesListener, Mas
 	protected ToolbarSmallR toolBar;
 	
 	protected PiutangComponetEdit editForm;
+	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
 	
 
 	public void init(ODatabaseDocumentTx db){
@@ -419,6 +424,14 @@ public class PiutangMaster implements MasterActionAdapter, HakAksesListener, Mas
 	public boolean getPrint() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 	
 	

@@ -13,6 +13,7 @@ import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 public interface WindowAdapter extends WidgetAdapter {
 public void initToolbar(ODatabaseDocumentTx db);
 public void initMenu(ODatabaseDocumentTx db);
+public MenuAdapter getMenu();
 public void initContext(ODatabaseDocumentTx db);
 public void showWelcome();
 public Component getComponentWelcome();

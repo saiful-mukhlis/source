@@ -1,6 +1,9 @@
 package com.bmb.app.view.master;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import org.bmb.app.base.adapter.FormAdapter;
@@ -8,6 +11,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.komponen.ToolbarSmallRE;
 
 import com.bmb.app.config.DataUser;
@@ -47,6 +51,8 @@ public class ProductdMaster   implements MasterActionAdapter, HakAksesListener, 
 	protected String title;
 	protected String urlIcon;
 	protected boolean perspectiveDefault=true;
+	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
 	
 //	protected FormAdapter form;
 //	protected ViewAdapter viewForm;
@@ -437,6 +443,14 @@ public class ProductdMaster   implements MasterActionAdapter, HakAksesListener, 
 	public boolean getPrint() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 	
 	

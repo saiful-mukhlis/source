@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -20,6 +22,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.bmb.app.base.komponen.SplitPane;
 import org.bmb.app.base.komponen.ToolbarSmallRP;
@@ -63,6 +66,8 @@ public class KandangdMaster implements MasterActionAdapter, HakAksesListener, Ma
 	protected JPanel aksi;
 
 	protected ToolbarSmallRP toolBar;
+	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
 	
 	public void init(ODatabaseDocumentTx db){
 		urlIcon=L.iconKandang16;
@@ -471,6 +476,14 @@ public class KandangdMaster implements MasterActionAdapter, HakAksesListener, Ma
 	public boolean getEdit() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 
 

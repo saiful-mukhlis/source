@@ -6,7 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,6 +22,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.bmb.app.base.builder.FormBuilder;
 import org.bmb.app.base.komponen.DatePicker;
@@ -62,6 +65,7 @@ public class KandangdInputPakanMaster implements MasterActionAdapter, HakAksesLi
 	
 	protected DatePicker tgla;
 	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
 	
 	public void init(ODatabaseDocumentTx db){
 		urlIcon=L.iconPakan16;
@@ -430,6 +434,14 @@ public class KandangdInputPakanMaster implements MasterActionAdapter, HakAksesLi
 	public boolean getPrint() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 
 

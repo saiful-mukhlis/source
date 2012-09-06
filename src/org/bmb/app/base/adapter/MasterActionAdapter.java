@@ -1,5 +1,7 @@
 package org.bmb.app.base.adapter;
 
+import java.util.List;
+
 public interface MasterActionAdapter extends WidgetAdapter {
 	public void actionAdd();
 	public void actionEdit();
@@ -16,4 +18,6 @@ public interface MasterActionAdapter extends WidgetAdapter {
 	
 	public String getTitle();
 	public String getUrlIcon();
+	
+	public List<ToolbarSmallAdapter> getChangeStateActions();
 }

@@ -1,6 +1,8 @@
 package org.bmb.app.base.abstrak;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
@@ -9,6 +11,8 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
 import org.bmb.app.base.adapter.TableAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
+import org.bmb.app.base.adapter.WindowAdapter;
 import org.bmb.app.base.komponen.SplitPane;
 import org.bmb.app.base.komponen.ToolbarSmall;
 import org.bmb.app.base.komponen.ToolbarSmallRLTED;
@@ -38,6 +42,9 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 	protected double lebar;
 	protected String title;
 	protected String urlIcon;
+	
+	protected List<ToolbarSmallAdapter> changeStateActions=new ArrayList<>();
+	protected WindowAdapter window;
 	
 	protected boolean perspectiveDefault=true;
 	
@@ -78,7 +85,7 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 //		});
 		
 		toolBar = new ToolbarSmallRLTED(this);
-		
+		changeStateActions.add(toolBar);
 		
 	}
 	
@@ -423,6 +430,26 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 	public boolean getPrint() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	public WindowAdapter getWindow() {
+		return window;
+	}
+
+
+	public void setWindow(WindowAdapter window) {
+		this.window = window;
+	}
+
+
+	public List<ToolbarSmallAdapter> getChangeStateActions() {
+		return changeStateActions;
+	}
+
+
+	public void setChangeStateActions(List<ToolbarSmallAdapter> changeStateActions) {
+		this.changeStateActions = changeStateActions;
 	}
 	
 	

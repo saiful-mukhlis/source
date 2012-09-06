@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.bmb.app.base.abstrak.action.AddContentAction;
 import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.bmb.app.base.adapter.WindowAdapter;
 import org.noos.xing.mydoggy.ToolWindowManager;
@@ -239,6 +240,7 @@ public class Komponent {
 		
 		
 		if (komponent.getWidgetTop()!=null) {
+			komponent.getWidgetTop().getChangeStateActions().add(window.getMenu());
 			komponent.getWidgetTop().build(db);
 			komponent.setComponent(komponent.getWidgetTop().getPanel());
 		}
