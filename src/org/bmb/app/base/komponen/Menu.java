@@ -11,7 +11,9 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 import org.bmb.app.base.adapter.HakAksesListener;
+import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MenuAdapter;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WindowAdapter;
 
 import com.bmb.app.config.DataUser;
@@ -411,6 +413,36 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		m.setText(App.getT(nama));
 		m.setMnemonic(key);
 		m.setIcon(icon16);
+	}
+
+	@Override
+	public void changeState() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setFalseAll() {
+		add.setEnabled(false);
+		edit.setEnabled(false);
+		view.setEnabled(false);
+		del.setEnabled(false);
+		print.setEnabled(false);
+	}
+
+	@Override
+	public void setStateByHakAkses() {
+		// TODO Auto-generated method stub
+		if (window.getKomponentSeledcted()!=null) {
+			MasterActionAdapter master=window.getKomponentSeledcted().getWidgetTop();
+			add.setEnabled(master.getAdd());
+			edit.setEnabled(master.getEdit());
+			view.setEnabled(master.getLihat());
+			del.setEnabled(master.getHapus());
+			print.setEnabled(master.getPrint());
+		}else{
+			setFalseAll();
+		}
 	}
 
 	//

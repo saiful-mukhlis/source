@@ -1,41 +1,25 @@
 package com.bmb.app.view.master;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
-import javax.swing.JToolBar;
-
 import org.bmb.app.base.adapter.FormAdapter;
 import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
-import org.bmb.app.base.adapter.MasterAdapterForToolbar;
 import org.bmb.app.base.adapter.TableAdapter;
-import org.bmb.app.base.adapter.WidgetAdapter;
 import org.bmb.app.base.komponen.ToolbarSmallRE;
-import org.bmb.app.base.komponen.ToolbarSmallRLTED;
 
 import com.bmb.app.config.DataUser;
 import com.bmb.app.global.App;
 import com.bmb.app.impl.view.form.ProductdComponetEdit;
 import com.bmb.app.lang.L;
 import com.bmb.app.view.table.ProductdTable;
-import com.jgoodies.forms.layout.CellConstraints;
-import com.jgoodies.forms.layout.FormLayout;
 import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
-public class ProductdMaster   implements MasterActionAdapter, HakAksesListener, MasterAdapterForEfectWidget, MasterAdapterForToolbar{
+public class ProductdMaster   implements MasterActionAdapter, HakAksesListener, MasterAdapterForEfectWidget{
 
 	public ProductdMaster() {
 		super();
@@ -429,6 +413,30 @@ public class ProductdMaster   implements MasterActionAdapter, HakAksesListener, 
 	public void perspective4() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean getAdd() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getHapus() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getLihat() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getPrint() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

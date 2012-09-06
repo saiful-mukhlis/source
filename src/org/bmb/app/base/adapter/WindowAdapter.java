@@ -27,6 +27,7 @@ public AddContentAction getWelcomeAca();
 
 public List<Komponent> getKomponents();
 public HashMap<String, Komponent> getKomponentMaps();
+public Komponent getKomponentSeledcted();
 
 public void showToolbar();
 

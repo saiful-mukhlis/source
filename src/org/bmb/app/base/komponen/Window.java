@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 
 import org.bmb.app.base.abstrak.WindowAbstract;
 import org.bmb.app.base.adapter.HakAksesListener;
+import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.noos.xing.mydoggy.Content;
 import org.noos.xing.mydoggy.ContentManager;
 import org.noos.xing.mydoggy.mydoggyset.action.AddContentAction;
@@ -41,7 +42,7 @@ import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
-public class Window extends WindowAbstract{
+public class Window extends WindowAbstract implements ToolbarSmallAdapter{
 	
 	private List<Komponent> komponents=new ArrayList<Komponent>();
 	private List<HakAksesListener> cangeHakAkses = new ArrayList<HakAksesListener>();
@@ -356,6 +357,9 @@ public class Window extends WindowAbstract{
 		this.komponentMaps = komponentMaps;
 	}
 	
+	public Komponent getKomponentSeledcted(){
+		return komponentMaps.get(idSelected);
+	}
 	
 	public void actionClose(){
 		ContentManager c=toolWindowManager.getContentManager();
@@ -376,14 +380,17 @@ public class Window extends WindowAbstract{
 	@Override
 	public void actionPrint() {
 		// TODO Auto-generated method stub
-		
+		Komponent komponent=getKomponentSeledcted();
+		if (komponent!=null) {
+			komponent.getWidgetTop().actionPrint();
+		}
 	}
 
 
 	@Override
 	public void actionAdd() {
 		// TODO Auto-generated method stub
-		Komponent komponent=komponentMaps.get(idSelected);
+		Komponent komponent=getKomponentSeledcted();
 		if (komponent!=null) {
 			komponent.getWidgetTop().actionAdd();
 		}
@@ -393,21 +400,30 @@ public class Window extends WindowAbstract{
 	@Override
 	public void actionEdit() {
 		// TODO Auto-generated method stub
-		
+		Komponent komponent=getKomponentSeledcted();
+		if (komponent!=null) {
+			komponent.getWidgetTop().actionEdit();
+		}
 	}
 
 
 	@Override
 	public void actionDel() {
 		// TODO Auto-generated method stub
-		
+		Komponent komponent=getKomponentSeledcted();
+		if (komponent!=null) {
+			komponent.getWidgetTop().actionDel();
+		}
 	}
 
 
 	@Override
 	public void actionView() {
 		// TODO Auto-generated method stub
-		
+		Komponent komponent=getKomponentSeledcted();
+		if (komponent!=null) {
+			komponent.getWidgetTop().actionView();
+		}
 	}
 	
 	public void actionReg(){
@@ -451,6 +467,27 @@ public class Window extends WindowAbstract{
 				return null;
 			}
 		}
+	}
+
+
+	@Override
+	public void changeState() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setFalseAll() {
+		// TODO Auto-generated method stub
+		menu.setFalseAll();
+	}
+
+
+	@Override
+	public void setStateByHakAkses() {
+		// TODO Auto-generated method stub
+		menu.setStateByHakAkses();
 	}
 	
 
