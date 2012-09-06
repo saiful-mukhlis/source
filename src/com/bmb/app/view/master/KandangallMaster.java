@@ -163,10 +163,10 @@ public class KandangallMaster extends MasterAbstract {
 	
 	
 	
-	public void changeHakAkses() {
-		ToolbarSmallRP toolBar=(ToolbarSmallRP) this.toolBar;
-		toolBar.getPrint().setEnabled(getPrint());
-	}
+//	public void changeHakAkses() {
+//		ToolbarSmallRP toolBar=(ToolbarSmallRP) this.toolBar;
+//		toolBar.getPrint().setEnabled(getPrint());
+//	}
 
 	public boolean getPrint() {
 		return DataUser.KANDANGD_PRINT;

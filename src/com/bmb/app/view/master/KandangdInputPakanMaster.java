@@ -19,7 +19,6 @@ import org.bmb.app.base.adapter.FormAdapter;
 import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
-import org.bmb.app.base.adapter.MasterAdapterForToolbar;
 import org.bmb.app.base.adapter.TableAdapter;
 import org.bmb.app.base.adapter.WidgetAdapter;
 import org.bmb.app.base.builder.FormBuilder;
@@ -39,7 +38,7 @@ import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.metadata.schema.OType;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
-public class KandangdInputPakanMaster implements MasterActionAdapter, HakAksesListener, MasterAdapterForEfectWidget, MasterAdapterForToolbar {
+public class KandangdInputPakanMaster implements MasterActionAdapter, HakAksesListener, MasterAdapterForEfectWidget {
 
 	protected JPanel panel;
 	protected JLabel label;
@@ -401,6 +400,36 @@ public class KandangdInputPakanMaster implements MasterActionAdapter, HakAksesLi
 	public void perspective4() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean getAdd() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getHapus() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getLihat() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getEdit() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getPrint() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 

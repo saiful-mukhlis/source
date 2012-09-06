@@ -6,7 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import org.bmb.app.base.adapter.MasterAdapterForToolbar;
+import org.bmb.app.base.adapter.MasterActionAdapter;
+
 
 import com.bmb.app.global.App;
 import com.bmb.app.lang.L;
@@ -19,11 +20,9 @@ public class ToolbarSmallRE extends ToolbarSmall {
 	protected JButton edit;
 //	protected JButton view;
 	
-	protected MasterAdapterForToolbar master;
 	
-	public ToolbarSmallRE(MasterAdapterForToolbar master) {
-		super();
-		this.master = master;
+	public ToolbarSmallRE(MasterActionAdapter master) {
+		super(master);
 		build();
 		buildActions();
 	}
@@ -109,13 +108,6 @@ public class ToolbarSmallRE extends ToolbarSmall {
 //	}
 
 
-	public MasterAdapterForToolbar getMaster() {
-		return master;
-	}
-
-	public void setMaster(MasterAdapterForToolbar master) {
-		this.master = master;
-	}
 
 	
 }

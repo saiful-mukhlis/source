@@ -15,6 +15,7 @@ public class L {
 	public static String reset="Reset";
 	public static String cancel="Cancel";
 	public static String login="Login";
+	public static String logout="Logout";
 	public static String ok="Ok";
 	public static String proses="Proses";
 	public static String print="Print";

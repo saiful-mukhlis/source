@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import org.bmb.app.base.adapter.MasterAdapterForToolbar;
+import org.bmb.app.base.adapter.MasterActionAdapter;
 
 import com.bmb.app.global.App;
 import com.bmb.app.lang.L;
@@ -22,11 +22,33 @@ public class ToolbarSmallRLTED extends ToolbarSmall {
 	protected JButton del;
 	protected JButton view;
 	
-	protected MasterAdapterForToolbar master;
 	
-	public ToolbarSmallRLTED(MasterAdapterForToolbar master) {
-		super();
-		this.master = master;
+	
+	
+	@Override
+	public void changeState() {
+		// TODO Auto-generated method stub
+		super.changeState();
+	}
+
+	@Override
+	public void setFalseAll() {
+		add.setEnabled(false);
+		edit.setEnabled(false);
+		del.setEnabled(false);
+		view.setEnabled(false);
+	}
+
+	@Override
+	public void setStateByHakAkses() {
+		add.setEnabled(master.getAdd());
+		edit.setEnabled(master.getEdit());
+		del.setEnabled(master.getHapus());
+		view.setEnabled(master.getLihat());
+	}
+
+	public ToolbarSmallRLTED(MasterActionAdapter master) {
+		super(master);
 		build();
 		buildActions();
 	}
@@ -154,13 +176,6 @@ public class ToolbarSmallRLTED extends ToolbarSmall {
 	}
 
 
-	public MasterAdapterForToolbar getMaster() {
-		return master;
-	}
-
-	public void setMaster(MasterAdapterForToolbar master) {
-		this.master = master;
-	}
 
 	
 }

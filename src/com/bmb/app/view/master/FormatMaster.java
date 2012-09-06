@@ -38,10 +38,10 @@ public class FormatMaster extends MasterAbstract {
 	@Override
 	public void setForm() {}
 	
-	public void changeHakAkses() {
-		ToolbarSmallRLE toolBar=(ToolbarSmallRLE) this.toolBar;
-		toolBar.getEdit().setEnabled(getEdit());
-	}
+//	public void changeHakAkses() {
+//		ToolbarSmallRLE toolBar=(ToolbarSmallRLE) this.toolBar;
+//		toolBar.getEdit().setEnabled(getEdit());
+//	}
 
 	
 

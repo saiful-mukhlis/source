@@ -8,7 +8,6 @@ import org.bmb.app.base.adapter.FormAdapter;
 import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MasterAdapterForEfectWidget;
-import org.bmb.app.base.adapter.MasterAdapterForToolbar;
 import org.bmb.app.base.adapter.TableAdapter;
 import org.bmb.app.base.komponen.SplitPane;
 import org.bmb.app.base.komponen.ToolbarSmall;
@@ -19,7 +18,7 @@ import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
-public abstract class MasterAbstract implements MasterActionAdapter, HakAksesListener, MasterAdapterForToolbar, MasterAdapterForEfectWidget{
+public abstract class MasterAbstract implements MasterActionAdapter, HakAksesListener, MasterAdapterForEfectWidget{
 
 
 	protected JPanel panel;
@@ -117,6 +116,7 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 
 	@Override
 	public void changeHakAkses() {
+		toolBar.setStateByHakAkses();
 	}
 
 	public TableAdapter getTable() {
@@ -317,7 +317,6 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 	}
 	
 	public void actionAdd() {
-		App.showErrSementara("asdrasdf");
 		if (form==null) {
 			setForm();
 			ODatabaseDocumentTx db = App.getDbd();
@@ -418,4 +417,13 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 	public void initBody(ODatabaseDocumentTx db) {}
 	public void setEditForm() {}
 	public void setForm() {}
+
+
+	@Override
+	public boolean getPrint() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
 }

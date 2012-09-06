@@ -4,7 +4,6 @@ package com.bmb.app.view.master;
 
 
 import org.bmb.app.base.abstrak.MasterAbstract;
-import org.bmb.app.base.komponen.ToolbarSmallRLTED;
 
 import com.bmb.app.config.DataUser;
 import com.bmb.app.impl.view.form.UsrComponetEdit;
@@ -41,12 +40,12 @@ public class PegawaiMaster extends MasterAbstract {
 		form.setMaster(this);
 	}
 
-	public void changeHakAkses() {
-		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
-		toolBar.getAdd().setEnabled(getAdd());
-		toolBar.getEdit().setEnabled(getEdit());
-		toolBar.getDel().setEnabled(getHapus());
-	}
+//	public void changeHakAkses() {
+//		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
+//		toolBar.getAdd().setEnabled(getAdd());
+//		toolBar.getEdit().setEnabled(getEdit());
+//		toolBar.getDel().setEnabled(getHapus());
+//	}
 
 	public boolean getAdd() {
 		return DataUser.USR_ADD;

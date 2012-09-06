@@ -7,4 +7,13 @@ public interface MasterActionAdapter extends WidgetAdapter {
 	public void actionReload();
 	public void actionDel();
 	public void actionPrint();
+	
+	public boolean getAdd();
+	public boolean getHapus();
+	public boolean getLihat();
+	public boolean getEdit();
+	public boolean getPrint();
+	
+	public String getTitle();
+	public String getUrlIcon();
 }

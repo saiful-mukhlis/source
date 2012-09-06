@@ -14,6 +14,7 @@ import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MenuAdapter;
 import org.bmb.app.base.adapter.WindowAdapter;
 
+import com.bmb.app.config.DataUser;
 import com.bmb.app.global.App;
 import com.bmb.app.lang.L;
 import com.bmb.app.lang.LWindow;
@@ -24,7 +25,13 @@ public class Menu implements MenuAdapter, HakAksesListener {
 	@Override
 	public void changeHakAkses() {
 		// TODO Auto-generated method stub
-
+		if (DataUser.getUsr()!=null) {
+			login.setText(L.logout);
+			login.setIcon(LOGOUT);
+		}else{
+			login.setText(L.login);
+			login.setIcon(LOGIN);
+		}
 	}
 
 	@Override
@@ -54,6 +61,7 @@ public class Menu implements MenuAdapter, HakAksesListener {
 	protected JMenuItem exit;
 	
 	public static Icon LOGIN=App.getIcon(L.iconLogin16);
+	public static Icon LOGOUT=App.getIcon(L.iconLogout16);
 	public static Icon CLOSE=App.getIcon(L.iconClose16);
 	public static Icon PRINT=App.getIcon(L.iconPrint16);
 	public static Icon EXIT=App.getIcon(L.iconExit16);

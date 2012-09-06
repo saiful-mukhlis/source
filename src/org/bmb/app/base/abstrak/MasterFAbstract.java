@@ -263,6 +263,50 @@ public abstract class MasterFAbstract implements MasterActionAdapter, HakAksesLi
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public boolean getAdd() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getHapus() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getLihat() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getEdit() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getPrint() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUrlIcon() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	
 
 }

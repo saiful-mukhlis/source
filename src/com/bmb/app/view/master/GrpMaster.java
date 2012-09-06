@@ -32,12 +32,12 @@ public class GrpMaster extends MasterAbstract {
 		
 	}
 	
-	public void changeHakAkses() {
-		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
-		toolBar.getAdd().setEnabled(getAdd());
-		toolBar.getEdit().setEnabled(getEdit());
-		toolBar.getDel().setEnabled(getHapus());
-	}
+//	public void changeHakAkses() {
+//		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
+//		toolBar.getAdd().setEnabled(getAdd());
+//		toolBar.getEdit().setEnabled(getEdit());
+//		toolBar.getDel().setEnabled(getHapus());
+//	}
 
 	public boolean getAdd() {
 		return DataUser.HAK_AKSES_ADD;

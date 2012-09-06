@@ -121,10 +121,11 @@ public class KandangMaster extends MasterAbstract {
 	
 	public void changeHakAkses() {
 		lajurMaster.changeHakAkses();
-		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
-		toolBar.getAdd().setEnabled(getAdd());
-		toolBar.getEdit().setEnabled(getEdit());
-		toolBar.getDel().setEnabled(getHapus());
+		super.changeHakAkses();
+//		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
+//		toolBar.getAdd().setEnabled(getAdd());
+//		toolBar.getEdit().setEnabled(getEdit());
+//		toolBar.getDel().setEnabled(getHapus());
 	}
 
 	public boolean getAdd() {
