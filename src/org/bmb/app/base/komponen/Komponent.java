@@ -236,6 +236,8 @@ public class Komponent {
 			komponent.setWidgetTop(new PiutangMaster());
 		}else if (type.equals(Window.KANDANG)) {
 			komponent.setWidgetTop(new KandangMaster());
+		}else if (type.equals(Window.INPUT_PRODUKSI)) {
+			komponent.setWidgetTop(new ProduksiFormMaster());
 		}
 		
 		

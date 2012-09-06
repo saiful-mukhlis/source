@@ -13,6 +13,7 @@ public class L {
 	public static String file="File";
 	public static String save="Save";
 	public static String reset="Reset";
+	public static String reload="Refresh ";
 	public static String cancel="Cancel";
 	public static String login="Login";
 	public static String logout="Logout";

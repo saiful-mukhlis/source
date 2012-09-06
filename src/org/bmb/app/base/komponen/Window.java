@@ -84,7 +84,7 @@ public class Window extends WindowAbstract{
 		Komponent inputPenjualan=new Komponent(this, INPUT_PENJUALAN, LWindow.penjualan, 'J', L.iconPenjualan16, L.iconPenjualan32);
 		Komponent inputPakan=new Komponent(this, INPUT_PAKAN, LWindow.pakan, 'U', L.iconPakan16, L.iconPakan32);
 		
-		Komponent format=new Komponent(this, FORMAT, LWindow.lap, 'F', L.iconLaporan16, L.iconLaporan32);
+		Komponent format=new Komponent(this, FORMAT, LWindow.format_lap, 'F', L.iconLaporan16, L.iconLaporan32);
 		Komponent produksiLajur=new Komponent(this, PRODUKSI_LAJUR, LWindow.lajur, 'O', L.iconLajur16, L.iconLajur32);
 		Komponent produksiKandang=new Komponent(this, PRODUKSI_KANDANG, LWindow.produksi_kandang, 'D', L.iconKandang16, L.iconKandang32);
 		Komponent produksiAll=new Komponent(this, PRODUKSI_ALL, LWindow.produksi_total, 'T', L.iconTotal16, L.iconTotal32);
@@ -426,6 +426,15 @@ public class Window extends WindowAbstract{
 		}
 	}
 	
+	@Override
+	public void actionReload() {
+		// TODO Auto-generated method stub
+		Komponent komponent=getKomponentSeledcted();
+		if (komponent!=null) {
+			komponent.getWidgetTop().actionReload();
+		}
+	}
+	
 	public void actionReg(){
 		ODatabaseDocumentTx db = App.getDbd();
 	    ODatabaseRecordThreadLocal. INSTANCE.set(db);
@@ -468,6 +477,9 @@ public class Window extends WindowAbstract{
 			}
 		}
 	}
+
+
+
 
 
 	

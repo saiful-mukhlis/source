@@ -239,16 +239,15 @@ public abstract class MasterAbstract implements MasterActionAdapter, HakAksesLis
 	public void modelWidgetChange(ODocument model) {
 		// tampilan default
 		actionView();
-		ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
+		//ToolbarSmallRLTED toolBar=(ToolbarSmallRLTED) this.toolBar;
 		if (model==null) {
-			toolBar.getEdit().setEnabled(false);
-			toolBar.getView().setEnabled(false);
-			toolBar.getDel().setEnabled(false);
+			for (ToolbarSmallAdapter toolbarSmallAdapter : getChangeStateActions()) {
+				toolbarSmallAdapter.setFalseAll();
+			}
 		}else{
-			toolBar.getAdd().setEnabled(getAdd());
-			toolBar.getEdit().setEnabled(getEdit());
-			toolBar.getView().setEnabled(getLihat());
-			toolBar.getDel().setEnabled(getHapus());
+			for (ToolbarSmallAdapter toolbarSmallAdapter : getChangeStateActions()) {
+				toolbarSmallAdapter.setStateByHakAkses();
+			}
 			viewForm.modelWidgetChange(model);
 		}
 

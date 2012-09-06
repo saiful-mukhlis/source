@@ -9,4 +9,6 @@ public interface ToolbarAdapter extends HakAksesListener{
 	public void build(ODatabaseDocumentTx db);
 	public JPanel getPanel();
 	public void setWindow(WindowAdapter window);
+	public void showMaxi();
+	public void showMini();
 }

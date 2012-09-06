@@ -204,4 +204,5 @@ public abstract class WindowAbstract implements WindowAdapter{
 		this.menu = menu;
 	}
 	
+	
 }

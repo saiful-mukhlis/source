@@ -30,7 +30,7 @@ public List<Komponent> getKomponents();
 public HashMap<String, Komponent> getKomponentMaps();
 public Komponent getKomponentSeledcted();
 
-public void showToolbar();
+public ToolbarAdapter getToolbar();
 
 public void login();
 
@@ -41,8 +41,12 @@ public void actionAdd();
 public void actionEdit();
 public void actionDel();
 public void actionView();
+public void actionReload();
 
 public void actionReg();
 public void actionAbout();
+
+
+public void showToolbar();
 
 }

@@ -13,7 +13,6 @@ import javax.swing.KeyStroke;
 import org.bmb.app.base.adapter.HakAksesListener;
 import org.bmb.app.base.adapter.MasterActionAdapter;
 import org.bmb.app.base.adapter.MenuAdapter;
-import org.bmb.app.base.adapter.ToolbarSmallAdapter;
 import org.bmb.app.base.adapter.WindowAdapter;
 
 import com.bmb.app.config.DataUser;
@@ -61,12 +60,14 @@ public class Menu implements MenuAdapter, HakAksesListener {
 	protected JMenuItem close;
 	protected JMenuItem print;
 	protected JMenuItem exit;
+	protected JMenuItem reload;
 	
 	public static Icon LOGIN=App.getIcon(L.iconLogin16);
 	public static Icon LOGOUT=App.getIcon(L.iconLogout16);
 	public static Icon CLOSE=App.getIcon(L.iconClose16);
 	public static Icon PRINT=App.getIcon(L.iconPrint16);
 	public static Icon EXIT=App.getIcon(L.iconExit16);
+	public static Icon RELOAD=App.getIcon(L.iconReload16);
 
 	protected JMenu editMenu;
 	protected JMenuItem add;
@@ -149,11 +150,13 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		edit = new JMenuItem();
 		del = new JMenuItem();
 		view = new JMenuItem();
+		reload=new JMenuItem();
 		
 		editMenu.add(add);
 		editMenu.add(edit);
 		editMenu.add(del);
 		editMenu.add(view);
+		editMenu.add(reload);
 
 		master = new JMenu();
 		pegawai = new JMenuItem();
@@ -221,6 +224,7 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		initMenu(edit, L.edit, KeyEvent.VK_E, KeyEvent.VK_E, ActionEvent.CTRL_MASK, EDIT);
 		initMenu(del, L.del, KeyEvent.VK_H, KeyEvent.VK_DELETE, 0, DEL);
 		initMenu(view, L.view, KeyEvent.VK_L, KeyEvent.VK_W, ActionEvent.CTRL_MASK, VIEW);
+		initMenu(reload, L.reload, KeyEvent.VK_R, KeyEvent.VK_F5, 0, RELOAD);
 		
 		initMenu(master, LWindow.master);
 		initMenu(pegawai, LWindow.pegawai, PEGAWAI);
@@ -241,8 +245,8 @@ public class Menu implements MenuAdapter, HakAksesListener {
 		initMenu(lpiutang, LWindow.lap_piutang, PIUTANG);
 		
 		initMenu(setting, LWindow.setting);
-		initMenu(format, LWindow.lap, FORMAT);
-		initMenu(showToolbar, LWindow.showToolbar);
+		initMenu(format, LWindow.format_lap, FORMAT);
+		initMenu(showToolbar, LWindow.hideToolbar);
 		initMenu(help, LWindow.help);
 		initMenu(registrasi, LWindow.registrasi, REGISTRASI);
 		initMenu(about, LWindow.about, ABAOUT);
@@ -310,6 +314,13 @@ public class Menu implements MenuAdapter, HakAksesListener {
 			}
 		});
 		
+		reload.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				window.actionReload();
+			}
+		});
+		
 		pegawai.addActionListener(window.getKomponentMaps().get(Window.PEGAWAI).getAdd());
 		kandang.addActionListener(window.getKomponentMaps().get(Window.KANDANG).getAdd());
 		pelanggan.addActionListener(window.getKomponentMaps().get(Window.PELANGGAN).getAdd());
@@ -330,7 +341,12 @@ public class Menu implements MenuAdapter, HakAksesListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				window.showToolbar();
+				if (showToolbar.getText().equals(LWindow.showToolbar)) {
+					showToolbar.setText(LWindow.hideToolbar);
+				}else{
+					showToolbar.setText(LWindow.showToolbar);
+				}
 			}
 		});
 		

@@ -275,13 +275,7 @@ public class Toolbar implements ToolbarAdapter{
 			public void mouseClicked(MouseEvent e) {
 				
 				if (e.getClickCount() == 2) {
-					tab.setVisible(false);
-					//toolBar4.setOrientation(JToolBar.HORIZONTAL);
-					login.setVisible(true);
-					exit.setVisible(true);
-					
-					blogin.setVisible(false);
-					bexit.setVisible(false);
+					showMini();
 				}
 				
 				
@@ -320,13 +314,7 @@ public class Toolbar implements ToolbarAdapter{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 2) {
-					tab.setVisible(true);
-					//toolBar4.setOrientation(JToolBar.VERTICAL);
-					blogin.setVisible(true);
-					bexit.setVisible(true);
-					
-					login.setVisible(false);
-					exit.setVisible(false);
+					showMaxi();
 				}
 				
 			}
@@ -420,6 +408,29 @@ public class Toolbar implements ToolbarAdapter{
 				.getPreferredSize().width) / 2, (Toolkit.getDefaultToolkit()
 				.getScreenSize().height - d.getPreferredSize().height) / 2);
 
+	}
+
+	@Override
+	public void showMaxi() {
+		// TODO Auto-generated method stub
+		tab.setVisible(true);
+		//toolBar4.setOrientation(JToolBar.VERTICAL);
+		blogin.setVisible(true);
+		bexit.setVisible(true);
+		
+		login.setVisible(false);
+		exit.setVisible(false);
+	}
+
+	@Override
+	public void showMini() {
+		tab.setVisible(false);
+		//toolBar4.setOrientation(JToolBar.HORIZONTAL);
+		login.setVisible(true);
+		exit.setVisible(true);
+		
+		blogin.setVisible(false);
+		bexit.setVisible(false);
 	}
 	
 	
